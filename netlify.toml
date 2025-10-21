@@ -8,15 +8,10 @@
 [functions]
   directory = "netlify/functions"
 
-# Redirect API routes to Netlify functions
+# Redirect all API routes to the api function
 [[redirects]]
-  from = "/api/auth/*"
-  to = "/.netlify/functions/auth/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/api/health"
-  to = "/.netlify/functions/auth/health"
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
   status = 200
 
 # Serve index.html for all other routes
