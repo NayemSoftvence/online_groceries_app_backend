@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Groceries API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .endpoint {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🛒 Online Groceries API</h1>
+    <p>Backend API for Flutter Groceries App</p>
+
+    <div class="endpoint">
+        <h3>Health Check</h3>
+        <code>GET /api/health</code>
+    </div>
+
+    <div class="endpoint">
+        <h3>Register User</h3>
+        <code>POST /api/auth/register</code>
+        <p>Body: { "name": "John", "email": "john@test.com", "password": "123456" }</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Login User</h3>
+        <code>POST /api/auth/login</code>
+        <p>Body: { "email": "john@test.com", "password": "123456" }</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Get All Users (Testing)</h3>
+        <code>GET /api/auth/users</code>
+    </div>
+
+    <p><strong>Base URL:</strong> <code id="baseUrl"></code></p>
+
+    <script>
+        document.getElementById('baseUrl').textContent = window.location.origin + '/api';
+    </script>
+</body>
+
+</html>
