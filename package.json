@@ -1,33 +1,25 @@
 {
-    "name": "online_groceries_app_backend",
-    "version": "1.0.0",
-    "description": "Backend API for Online Groceries Flutter App",
-    "main": "src/server.js",
-    "scripts": {
-        "start": "node src/server.js",
-        "dev": "nodemon src/server.js",
-        "build": "echo 'No build step required'",
-        "netlify": "netlify dev"
-    },
-    "keywords": [
-        "groceries",
-        "api",
-        "flutter",
-        "nodejs"
-    ],
-    "author": "Nayem",
-    "license": "ISC",
-    "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "dotenv": "^16.0.0",
-        "express": "^4.18.2",
-        "joi": "^17.9.0",
-        "jsonwebtoken": "^9.0.0",
-        "serverless-http": "^3.2.0"
-    },
-    "devDependencies": {
-        "netlify-cli": "^17.38.1",
-        "nodemon": "^3.0.0"
-    },
-    "type": "commonjs"
+  "name": "online_groceries_app_backend",
+  "version": "1.0.0",
+  "description": "Backend API for Online Groceries Flutter App",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "netlify:dev": "netlify dev",
+    "build": "echo 'No build needed'",
+    "test": "echo 'No tests yet'"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "joi": "^17.9.0",
+    "jsonwebtoken": "^9.0.0",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0",
+    "netlify-cli": "^17.0.0"
+  }
 }

@@ -8,13 +8,11 @@
 [functions]
   directory = "netlify/functions"
 
-# Redirect all API routes to our single function
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
 
-# Serve index.html for all other routes
 [[redirects]]
   from = "/*"
   to = "/index.html"

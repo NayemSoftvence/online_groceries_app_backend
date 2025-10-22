@@ -1,9 +1,6 @@
-// netlify/functions/api.js
-const express = require('express');
+// netlify/functions/api.js - Netlify adapter only
 const serverless = require('serverless-http');
+const app = require('../../src/app'); // Import your Express app
 
-// Import your existing Express app
-const app = require('../src/server');
-
-// Wrap your Express app for Netlify
+// Wrap Express app for Netlify
 exports.handler = serverless(app);
