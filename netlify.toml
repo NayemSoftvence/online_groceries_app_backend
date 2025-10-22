@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "echo 'No build needed'"
+  command = "npm install"
 
 [build.environment]
   NODE_ENV = "production"
@@ -8,7 +8,7 @@
 [functions]
   directory = "netlify/functions"
 
-# Redirect all API routes to the api function
+# Redirect all API routes to our single function
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
