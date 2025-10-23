@@ -1,4 +1,5 @@
 const User = require('./auth.model');
+const { generateToken } = require('../../utils/auth');
 
 class AuthService {
   async register(userData) {
@@ -12,9 +13,13 @@ class AuthService {
     const user = await User.create(userData);
     
     // Generate token
-    const token = require('../../utils/auth').generateToken(user.id);
+    const token = generateToken(user.id);
 
-    return { user: user.toSafeObject(), token };
+    // Return user without password
+    const userResponse = user.toJSON();
+    delete userResponse.password;
+
+    return { user: userResponse, token };
   }
 
   async login(email, password) {
@@ -29,9 +34,13 @@ class AuthService {
     }
 
     // Generate token
-    const token = require('../../utils/auth').generateToken(user.id);
+    const token = generateToken(user.id);
 
-    return { user: user.toSafeObject(), token };
+    // Return user without password
+    const userResponse = user.toJSON();
+    delete userResponse.password;
+
+    return { user: userResponse, token };
   }
 
   async getProfile(userId) {
@@ -39,7 +48,10 @@ class AuthService {
     if (!user) {
       throw new Error('User not found');
     }
-    return user.toSafeObject();
+    
+    const userResponse = user.toJSON();
+    delete userResponse.password;
+    return userResponse;
   }
 }
 

@@ -66,11 +66,4 @@ User.prototype.comparePassword = async function(candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
 
-// Instance method to return user without password
-User.prototype.toSafeObject = function() {
-  const user = { ...this.toJSON() };
-  delete user.password;
-  return user;
-};
-
 module.exports = User;
