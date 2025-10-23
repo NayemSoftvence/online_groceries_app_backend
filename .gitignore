@@ -1,8 +1,8 @@
 node_modules/
 .env
-.DS_Store
 *.log
+.DS_Store
+dist/
+build/
+.coverage
 .nyc_output
-coverage/
-# Local Netlify folder
-.netlify

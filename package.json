@@ -1,27 +1,28 @@
 {
   "name": "online_groceries_app_backend",
   "version": "1.0.0",
-  "description": "Backend API for Online Groceries Flutter App",
+  "description": "Backend for Online Groceries App",
   "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "netlify:dev": "netlify dev",
-    "build": "echo 'No build needed'",
-    "test": "echo 'No tests yet'"
+    "dev": "nodemon src/server.js",
+    "build": "netlify-lambda build src",
+    "serve": "netlify-lambda serve src"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "dotenv": "^16.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "joi": "^17.9.0",
-    "jsonwebtoken": "^9.0.0",
-    "serverless-http": "^3.2.0",
-    "sqlite": "^5.1.1",
+    "express-rate-limit": "^6.10.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "netlify-cli": "^17.0.0",
-    "nodemon": "^3.0.0"
+    "netlify-lambda": "^2.0.16",
+    "nodemon": "^3.0.1"
   }
 }
