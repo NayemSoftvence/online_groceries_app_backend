@@ -1,6 +1,6 @@
 const express = require('express');
-const { authenticateToken } = require('../middleware/authMiddleware');
-const { dbAll, dbRun } = require('../config/database');
+const { authenticateToken } = require('../../middleware/authMiddleware');
+const { dbAll, dbRun } = require('../../config/database');
 const router = express.Router();
 
 // Get all notifications
