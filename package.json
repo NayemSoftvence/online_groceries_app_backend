@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "build": "netlify-lambda build src",
-    "serve": "netlify-lambda serve src"
+    "build": "echo 'No build step required for Express app'",
+    "serve": "node src/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
